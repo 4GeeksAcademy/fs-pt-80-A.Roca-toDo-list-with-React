@@ -10,8 +10,11 @@ const Home = () => {
 	}
 
 	const controlInputTexto = (e) => {
-		e.preventDefault(); 
-		if (textoDeEntrada.trim() === "")  return; 
+		e.preventDefault();
+		if (textoDeEntrada.trim() === "") {
+			return;
+		}
+
 
 		const nuevaTarea = { label: textoDeEntrada, id: Date.now() };
 		setTareas([...tareas, nuevaTarea]);
@@ -34,7 +37,8 @@ const Home = () => {
 					onChange={controlTarea}
 					value={textoDeEntrada}
 					type="text"
-					placeholder="Agrega tareas" />
+					placeholder="Agrega tareas"
+					required />
 				<input className="addBtn" type="submit" value="Add" />
 			</form>
 			<ul>
